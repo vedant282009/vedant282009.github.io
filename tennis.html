@@ -10,9 +10,9 @@
     <header><a href="./index.html">Home page</a></header>
     <div class="tennis_banner">
       <h1>Tennis blog</h1>
-      <p>Tennis is a dynamic sport that combines agility, strategy, and precision, captivating players and spectators alike with its fast-paced action. Played on a variety of surfaces—grass, clay, or hard court—the game challenges competitors to showcase their skills through powerful serves, strategic volleys, and graceful footwork. Whether in singles or doubles matches, tennis demands both physical endurance and mental acuity, as players anticipate their opponent's moves while crafting their own tactical responses. The sport’s rich history and prestigious tournaments, like Wimbledon and the US Open, add to its allure, making it a beloved game that transcends generations and cultures.</p>
+      <p>Tennis is a dynamic sport that combines agility, strategy, and precision, captivating players and spectators alike with its fast-paced action. Played on a variety of surfaces—grass, clay, or hard court—the game challenges competitors to showcase their skills through powerful serves, strategic volleys, and graceful footwork. Whether in singles or doubles matches, tennis demands both physical endurance and mental acuity, as players anticipate their opponent's moves while crafting their own tactical responses. The sport’s rich history and prestigious tournaments, like Wimbledon and the US Open, add to its allure, making it a beloved game that transcends generations and cultures. Press "enter" to read more and learn how to play.</p>
       <img id="novak" src="https://cdn.britannica.com/78/249578-050-01D46C9B/Novak-Djokovic-Serbia-US-Open-2023.jpg">
-      <button onclick="change()">Click to change the tennis player</button>
+      <button id="change" onclick="change()">Click to change the tennis player</button>
       <script>
         let tennis="https://media.istockphoto.com/id/1171084311/photo/tennis-rackets-and-balls-leaned-against-the-net.jpg?s=612x612&w=0&k=20&c=SnDgfU30k0PMfVjSHTv4umDQWwKtUHJ8AEgofJXg6w4=";
         let nadal="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2024-06/240613-rafael-nadal-se-1049a-acb5e8.jpg";
@@ -22,11 +22,18 @@
         let i=0;
         function change(){
           i++;
-          if (i >= i.length){
-            i=0;
+          if (i === 3){
+            document.getElementById('change').style.display=none;
           }
           document.getElementById('novak').src=images[i];
         }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.keyCode === 13) {
+                window.open('https://en.wikipedia.org/wiki/Tennis', "_blank");
+            }
+        });
+
       </script>
     </div>
     <h3>Please put the first and last name of your favorite tennis player below (no uppercase)</h3>
