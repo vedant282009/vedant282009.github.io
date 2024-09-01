@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header><a href="./index.html">Home page</a></header>
+    <div class="tennis_banner">
+      <h1>Tennis blog</h1>
+      <p>Tennis is a dynamic sport that combines agility, strategy, and precision, captivating players and spectators alike with its fast-paced action. Played on a variety of surfaces—grass, clay, or hard court—the game challenges competitors to showcase their skills through powerful serves, strategic volleys, and graceful footwork. Whether in singles or doubles matches, tennis demands both physical endurance and mental acuity, as players anticipate their opponent's moves while crafting their own tactical responses. The sport’s rich history and prestigious tournaments, like Wimbledon and the US Open, add to its allure, making it a beloved game that transcends generations and cultures.</p>
+      <img id="novak" src="https://cdn.britannica.com/78/249578-050-01D46C9B/Novak-Djokovic-Serbia-US-Open-2023.jpg">
+      <button onclick="change()">Click to change the tennis player</button>
+      <script>
+        function change(){
+          let nadal="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2024-06/240613-rafael-nadal-se-1049a-acb5e8.jpg";
+          let federer = "https://i.insider.com/63236b16d5916b0019abec2f?width=800&format=jpeg&auto=webp";
+          let alcaraz = "https://phantom-marca.unidadeditorial.es/a79358952d27d4836957475522aac7cb/crop/0x0/2044x1363/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/06/16940121928334.jpg";
+          let images=[nadal, federer, alcaraz];
+          let i=0;
+          document.getElementById('novak').src=images[i];
+          i += 1
+          if (i > 2){
+            i=0;
+          }
+        }
+      </script>
+    </div>
+    
+</body>
+</html>
