@@ -29,6 +29,22 @@
         }
       </script>
     </div>
-    
+    <h3>Please put the first and last name of your favorite tennis player below (no uppercase)</h3>
+    <input id="field" type="submit">
+    <p id="player"></p>
+    <script>
+        let x = document.getElementById('field').value;
+        if (x == "novak djokovic"){
+            document.getElementById('player').innerHTML= "He's my favorite player too! He is really good at tennis, the GOAT."
+        }
+        else if (x == "raphael nadal"){
+            document.getElementById('player').innerHTML= "I love Nadal! He is really good at tennis; he puts a lot of spin on the ball."
+        }
+        else if (x == "roger federer"){
+            document.getElementById('player').innerHTML= "I love Federer! He is really good at tennis and some consider him one of the best of all time."
+        }
+        else:
+            document.getElementById('player').innerHTML="I like that player too!"
+    </script>
 </body>
 </html>
