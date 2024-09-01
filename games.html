@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Games</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1>Tennis Trivia Game</h1>
+    <button onclick="setTimeout(timer, 30000); game()">Start the timer</button>
+    <img id="tennis" src="https://media.istockphoto.com/id/1171084311/photo/tennis-rackets-and-balls-leaned-against-the-net.jpg?s=612x612&w=0&k=20&c=SnDgfU30k0PMfVjSHTv4umDQWwKtUHJ8AEgofJXg6w4=">
+    <input id="inp" type="text">
+    <button onclick="game()">Submit</button>
+    <script>
+      let novak = "https://cdn.britannica.com/78/249578-050-01D46C9B/Novak-Djokovic-Serbia-US-Open-2023.jpg";
+      let nadal="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2024-06/240613-rafael-nadal-se-1049a-acb5e8.jpg";
+      let federer = "https://i.insider.com/63236b16d5916b0019abec2f?width=800&format=jpeg&auto=webp";
+      let alcaraz = "https://phantom-marca.unidadeditorial.es/a79358952d27d4836957475522aac7cb/crop/0x0/2044x1363/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/06/16940121928334.jpg";
+      let sinner = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0831/dm_240831_dm_ten_sinner_wins/dm_240831_dm_ten_sinner_wins.jpg&w=384&h=216";
+      let zverev = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0708/dm_240708_zverev_rally/dm_240708_zverev_rally.jpg&w=384&h=216";
+      let agassi = "https://media.gq.com/photos/55ee6490e4fe554f30883d6f/master/w_1600%2Cc_limit/GettyImages-57311909.jpg";
+      let medvedev = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0712/dm_240712_medvedev_takes_first_set/dm_240712_medvedev_takes_first_set.jpg&w=384&h=216";
+      let shelton = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0830/dm_240830_ben_shelton_serve/dm_240830_ben_shelton_serve.jpg&w=384&h=216";
+      let rublev = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0828/dm_240828_TEN_One-Play_Rublev_wins/dm_240828_TEN_One-Play_Rublev_wins.jpg&w=384&h=216";
+      let players = [novak, nadal, federer, alcaraz, sinner, zverev, agassi, medvedev, shelton, rublev];
+      let counter=0;
+      function game(){
+        let i = Math.floor(Math.random()*10);
+        document.getElementById('tennis').src=players[i];
+        let x=document.getElementById('inp').value;
+        if ((x === "novak djokovic" && i===0) || (x === "raphael nadal" && i===1) || (x === "roger federer" && i===2) || (x === "carlos alcaraz" && i===3) || (x === "jannik sinner" && i===4) || (x === "alexander zverev" && i===5) || (x === "andre agassi" && i===6) || (x === "daniil medvedev" && i===7) || (x === "ben shelton" && i===8) || (x === "andrey rublev" && i===9)){
+          let counter += 1;
+        }
+     
+      }
+      function timer(){
+        alert("You got " + counter + " right out of 10")
+      }
+    </script>
+  </body>
+</html>
