@@ -33,6 +33,7 @@
     <input id="field" type="text">
     <button onclick="favorite()">Submit</button>
     <p id="player"></p>
+    <buton onclick="searchGoogle()">Find out more about your favorite player!</buton>
     <script>
         function favorite(){
             let x = document.getElementById('field').value;
@@ -49,6 +50,12 @@
                 document.getElementById('player').innerHTML="I like that player too!";
             }
         }
+        function searchGoogle() {
+            const query = document.getElementById('field').value;
+            const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(googleSearchURL, '_blank');
+        }
+
     </script>
 </body>
 </html>
