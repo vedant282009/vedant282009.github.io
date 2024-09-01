@@ -22,11 +22,9 @@
         let i=0;
         function change(){
           i++;
-          if (i === 3){
-            document.getElementById('change').style.display=none;
-          }
-          document.getElementById('novak').src=images[i];
-        }
+          if (i >= i.length){
+            i=0;
+            }
 
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Enter' || event.keyCode === 13) {
