@@ -9,13 +9,13 @@
   </head>
   <body>
     <h1>Tennis Trivia Game</h1>
-    <button onclick="setTimeout(timer, 30000); game()">Start the timer</button>
+    <button onclick="startGame()">Start the timer</button>
     <img id="tennis" src="https://media.istockphoto.com/id/1171084311/photo/tennis-rackets-and-balls-leaned-against-the-net.jpg?s=612x612&w=0&k=20&c=SnDgfU30k0PMfVjSHTv4umDQWwKtUHJ8AEgofJXg6w4=">
     <input id="inp" type="text">
-    <button onclick="game()">Submit</button>
+    <button onclick="submitAnswer()">Submit</button>
     <script>
       let novak = "https://cdn.britannica.com/78/249578-050-01D46C9B/Novak-Djokovic-Serbia-US-Open-2023.jpg";
-      let nadal="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2024-06/240613-rafael-nadal-se-1049a-acb5e8.jpg";
+      let nadal = "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2024-06/240613-rafael-nadal-se-1049a-acb5e8.jpg";
       let federer = "https://i.insider.com/63236b16d5916b0019abec2f?width=800&format=jpeg&auto=webp";
       let alcaraz = "https://phantom-marca.unidadeditorial.es/a79358952d27d4836957475522aac7cb/crop/0x0/2044x1363/resize/828/f/jpg/assets/multimedia/imagenes/2023/09/06/16940121928334.jpg";
       let sinner = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0831/dm_240831_dm_ten_sinner_wins/dm_240831_dm_ten_sinner_wins.jpg&w=384&h=216";
@@ -25,18 +25,42 @@
       let shelton = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0830/dm_240830_ben_shelton_serve/dm_240830_ben_shelton_serve.jpg&w=384&h=216";
       let rublev = "https://a.espncdn.com/combiner/i?img=/media/motion/2024/0828/dm_240828_TEN_One-Play_Rublev_wins/dm_240828_TEN_One-Play_Rublev_wins.jpg&w=384&h=216";
       let players = [novak, nadal, federer, alcaraz, sinner, zverev, agassi, medvedev, shelton, rublev];
-      let counter=0;
-      function game(){
-        let i = Math.floor(Math.random()*10);
-        document.getElementById('tennis').src=players[i];
-        let x=document.getElementById('inp').value;
-        if ((x === "novak djokovic" && i===0) || (x === "raphael nadal" && i===1) || (x === "roger federer" && i===2) || (x === "carlos alcaraz" && i===3) || (x === "jannik sinner" && i===4) || (x === "alexander zverev" && i===5) || (x === "andre agassi" && i===6) || (x === "daniil medvedev" && i===7) || (x === "ben shelton" && i===8) || (x === "andrey rublev" && i===9)){
-          let counter += 1;
-        }
-     
+      let counter = 0;
+      let currentPlayerIndex;
+      let intervalId;
+
+      function startGame() {
+        intervalId = setInterval(changeImage, 3000); // Change image every 3 seconds
+        setTimeout(timer, 30000); // Stop the game after 30 seconds
       }
-      function timer(){
-        alert("You got " + counter + " right out of 10")
+
+      function changeImage() {
+        currentPlayerIndex = Math.floor(Math.random() * 10);
+        document.getElementById('tennis').src = players[currentPlayerIndex];
+      }
+
+      function submitAnswer() {
+        let x = document.getElementById('inp').value.toLowerCase();
+        if (
+          (x === "novak djokovic" && currentPlayerIndex === 0) || 
+          (x === "rafael nadal" && currentPlayerIndex === 1) || 
+          (x === "roger federer" && currentPlayerIndex === 2) || 
+          (x === "carlos alcaraz" && currentPlayerIndex === 3) || 
+          (x === "jannik sinner" && currentPlayerIndex === 4) || 
+          (x === "alexander zverev" && currentPlayerIndex === 5) || 
+          (x === "andre agassi" && currentPlayerIndex === 6) || 
+          (x === "daniil medvedev" && currentPlayerIndex === 7) || 
+          (x === "ben shelton" && currentPlayerIndex === 8) || 
+          (x === "andrey rublev" && currentPlayerIndex === 9)
+        ) {
+          counter += 1;
+        }
+        document.getElementById('inp').value = ""; // Clear the input field after submission
+      }
+
+      function timer() {
+        clearInterval(intervalId); // Stop the interval
+        alert("You got " + counter + " right out of 10");
       }
     </script>
   </body>
