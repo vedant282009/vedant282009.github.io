@@ -16,6 +16,10 @@ button {
 }
 
 header {
+  display:flex;
+}
+
+header a{
   margin-right:20px;
 }
 
@@ -23,7 +27,21 @@ header {
   background-color:#d9cb86;
   display:flex;
 }
-.novak_banner, .us_open p {
-  margin-left:50px;
+
+.novak_banner {
+  margin-bottom:50px;
+  margin-right:50px;
+}
+.novak_banner p {
   align-self:center;
+  margin-right: 30px;
+}
+
+.us_open p{
+  align-self:center;
+  margin-right:30px;
+}
+
+.us_open {
+  margin-left: 30px;
 }
