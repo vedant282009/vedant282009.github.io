@@ -8,9 +8,22 @@ p {
 
 .tennis_banner {
   text-algin:center;
-  background-color:yellow;
+  background-color:#d0d5d6;
 }
 
 button {
   diplay:block;
+}
+
+header {
+  margin-right:20px;
+}
+
+.novak_banner, .us_open {
+  background-color:#d9cb86;
+  display:flex;
+}
+.novak_banner, .us_open p {
+  margin-left:50px;
+  align-self:center;
 }
