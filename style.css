@@ -16,11 +16,12 @@ button {
 }
 
 header {
-  display:flex;
+  float:right;
 }
 
 header a{
   margin-right:20px;
+  
 }
 
 .novak_banner, .us_open {
@@ -30,16 +31,17 @@ header a{
 
 .novak_banner {
   margin-bottom:50px;
-  margin-right:50px;
 }
 .novak_banner p {
   align-self:center;
   margin-right: 30px;
+  margin-left:30px;
 }
 
 .us_open p{
   align-self:center;
   margin-right:30px;
+  margin-left:30px;
 }
 
 .us_open {
