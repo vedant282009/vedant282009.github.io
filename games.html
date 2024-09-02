@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
+    <header><a href="./index.html">Home page</a></header>
     <h1>Tennis Trivia Game</h1>
     <button onclick="startGame()">Start the timer</button>
     <img id="tennis" src="https://media.istockphoto.com/id/1171084311/photo/tennis-rackets-and-balls-leaned-against-the-net.jpg?s=612x612&w=0&k=20&c=SnDgfU30k0PMfVjSHTv4umDQWwKtUHJ8AEgofJXg6w4=" style="width:50%">
@@ -28,12 +29,13 @@
       let counter = 0;
       let currentPlayerIndex;
       let intervalId;
-      let availablePlayers = [...players]; // Create a copy of the players array to track available players
+      let availablePlayers;
 
       function startGame() {
         counter = 0;
-        intervalId = setInterval(changeImage, 7000); // Change image every 3 seconds
-        setTimeout(timer, 70000); // Stop the game after 30 seconds
+        availablePlayers = [...players]; // Reset the available players
+        intervalId = setInterval(changeImage, 7000); // Change image every 7 seconds
+        setTimeout(timer, 70000); // Stop the game after 70 seconds
       }
 
       function changeImage() {
